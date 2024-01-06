@@ -1,0 +1,23 @@
+CREATE DATABASE reto_1
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Mexico.1252'
+    LC_CTYPE = 'Spanish_Mexico.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+	
+CREATE TABLE IF NOT EXISTS public.cliente
+(
+    id bigserial NOT NULL,
+    tipo_documento character varying(1) COLLATE pg_catalog."default" NOT NULL,
+    num_documento text COLLATE pg_catalog."default" NOT NULL,
+    primer_nombre text COLLATE pg_catalog."default" NOT NULL,
+    segundo_nombre text COLLATE pg_catalog."default",
+    primer_apellido text COLLATE pg_catalog."default" NOT NULL,
+    segundo_apellido text COLLATE pg_catalog."default",
+    telefono text COLLATE pg_catalog."default",
+    direccion text COLLATE pg_catalog."default",
+    CONSTRAINT cliente_pkey PRIMARY KEY (id)
+)
